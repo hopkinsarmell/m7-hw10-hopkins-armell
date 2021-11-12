@@ -8,12 +8,18 @@ var textarea = document.querySelector('textarea')
 // Then apply them to elements on the page
 // YOUR CODE HERE
 
+
+
 formEl.onsubmit = function(e) {
   // prevents form submission
   e.preventDefault()
   // save name element's content to cookies
   // save textarea's content to localstorage
   // YOUR CODE HERE
+  var words = document.getElementById("notes-area").value
+  document.cookie = document.querySelector('span').innerText
+  console.log({words})
+  localStorage.setItem('text', words)
 
   // triggers thumbs up animation
   this.elements.save.classList.add('emoji')
@@ -23,6 +29,8 @@ clear.onclick = function() {
   // Clear textarea's value
   // Clear localstorage's content
   // YOUR CODE HERE
+ 
+
 
   // triggers thumbs up animation
   this.classList.add('emoji')
