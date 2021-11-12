@@ -6,7 +6,8 @@ var textarea = document.querySelector('textarea')
 
 // Retrieve name and note content from cookies and localstorage
 // Then apply them to elements on the page
-// YOUR CODE HERE
+textarea.value = localStorage.getItem('text')
+nameSpan.innerText = document.cookie
 
 
 
@@ -15,7 +16,6 @@ formEl.onsubmit = function(e) {
   e.preventDefault()
   // save name element's content to cookies
   // save textarea's content to localstorage
-  // YOUR CODE HERE
   var words = document.getElementById("notes-area").value
   document.cookie = document.querySelector('span').innerText
   console.log({words})
