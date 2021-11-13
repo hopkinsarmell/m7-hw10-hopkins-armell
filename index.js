@@ -7,7 +7,11 @@ var textarea = document.querySelector('textarea')
 // Retrieve name and note content from cookies and localstorage
 // Then apply them to elements on the page
 textarea.value = localStorage.getItem('text')
-nameSpan.innerText = document.cookie
+if (document.cookie == "") {
+  nameSpan.textContent = 'Your Name'
+} else {
+  nameSpan.innerText = document.cookie
+}
 
 
 
@@ -17,9 +21,10 @@ formEl.onsubmit = function(e) {
   // save name element's content to cookies
   // save textarea's content to localstorage
   var words = document.getElementById("notes-area").value
-  document.cookie = document.querySelector('span').innerText
   console.log({words})
   localStorage.setItem('text', words)
+  document.cookie = document.querySelector('span').innerText
+
 
   // triggers thumbs up animation
   this.elements.save.classList.add('emoji')
